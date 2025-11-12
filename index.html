@@ -1,14 +1,4 @@
-<!--
-LUMINASK™ landing — Single-file HTML for GitHub Pages
-Author: ChatGPT
-How to publish on GitHub Pages (gratis):
-1) Crea un repo (por ej. trend-ia/luminask) y pega este index.html en la raíz.
-2) En Settings → Pages: Source = Deploy from a branch → main /root. Guarda.
-3) (Opcional) Dominio personalizado: configura CNAME en DNS a <usuario>.github.io y añade el custom domain en Pages.
-4) Reemplaza los enlaces de CTA: data-forms-url (Google Forms) y data-pay-url (Stripe/PayPal).
-5) Sube tus imágenes a /assets/img/ y cambia los src.
---><!doctype html>
-
+<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="utf-8">
@@ -16,17 +6,21 @@ How to publish on GitHub Pages (gratis):
   <title>LUMINASK™ | Tu spa inteligente en 15 minutos al día</title>
   <meta name="description" content="LUMINASK™: 7 luces LED para mejorar el aspecto de tu piel sin salir de casa. Resultados visibles, garantía de 30 días y envíos a todo México.">
   <meta name="theme-color" content="#E6E1F7"><!-- lavanda claro -->
+
   <!-- Open Graph -->
   <meta property="og:title" content="LUMINASK™ | Tu spa inteligente en 15 minutos al día">
   <meta property="og:description" content="7 luces LED para mejorar el aspecto de tu piel sin salir de casa.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://luminask.trend-ia.com">
-  <meta property="og:image" content="https://luminask.trend-ia.com/assets/img/video-cover.jpg">
+  <meta property="og:image" content="https://luminask.trend-ia.com/assets/img/hero-bg-luminask.jpg">
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LUMINASK™ | Tu spa inteligente en 15 minutos al día">
   <meta name="twitter:description" content="7 luces LED para mejorar el aspecto de tu piel sin salir de casa.">
-  <meta name="twitter:image" content="https://luminask.trend-ia.com/assets/img/video-cover.jpg">  <style>
+  <meta name="twitter:image" content="https://luminask.trend-ia.com/assets/img/hero-bg-luminask.jpg">
+
+  <style>
     :root{
       --lavanda:#E6E1F7;        /* fondo suave */
       --lavanda-osc:#b9b2e6;    /* acento */
@@ -41,6 +35,7 @@ How to publish on GitHub Pages (gratis):
       --shadow:0 10px 30px rgba(17,24,39,.08);
       --radius:18px;
     }
+
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--negro);background:var(--blanco);}
     a{color:inherit;text-decoration:none}
@@ -50,28 +45,19 @@ How to publish on GitHub Pages (gratis):
     /* Header */
     header{position:sticky;top:0;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde);z-index:50}
     .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand .word{color:var(--turquesa)}
-    .brand .tag{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--lima)}
-    .brand .tag svg{width:16px;height:16px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-logo{height:30px;width:auto;display:block}
     nav a{margin-left:18px;font-weight:600;color:#374151}
     nav a:hover{color:#111827}
 
-    /* Hero */
-    /* Hero (fondo con tu foto + velo blanco para legibilidad) */
-.hero{
-  position:relative;
-  background:
-    linear-gradient(0deg, rgba(255,255,255,.86), rgba(255,255,255,.86)),
-    url('assets/img/hero-bg-luminask.jpg') center/cover no-repeat;
-}
-.hero .inner{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:30px;
-  align-items:center;
-  padding:64px 0;
-}
+    /* Hero con fondo */
+    .hero{
+      position:relative;
+      background:
+        linear-gradient(0deg, rgba(255,255,255,.86), rgba(255,255,255,.86)),
+        url('assets/img/hero-bg-luminask.jpg') center/cover no-repeat;
+    }
+    .hero .inner{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:64px 0}
     .kicker{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--borde);padding:8px 12px;border-radius:999px;font-size:12px;color:#374151;box-shadow:var(--shadow)}
     h1{font-size:clamp(28px,4.2vw,48px);line-height:1.05;margin:14px 0}
     .sub{font-size:18px;color:var(--gris);max-width:52ch}
@@ -79,9 +65,8 @@ How to publish on GitHub Pages (gratis):
     .btn{padding:12px 18px;border-radius:12px;border:1px solid transparent;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
     .btn.primary{background:#111827;color:#fff}
     .btn.secondary{background:#fff;border-color:var(--borde)}
-    .hero .card{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
 
-    /* Sections */
+    /* Secciones */
     section{padding:56px 0}
     .title{font-size:28px;margin:0 0 18px 0}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -89,22 +74,22 @@ How to publish on GitHub Pages (gratis):
     .feature h3{margin:8px 0 6px 0}
     .muted{color:var(--gris)}
 
-    /* How it works */
+    /* Cómo funciona */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .step{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .step .num{font-weight:800;color:#6d28d9}
 
-    /* Gallery */
+    /* Galería */
     .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
     .gallery img{border-radius:12px;border:1px solid var(--borde)}
     .video{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--borde)}
     .video button{position:absolute;inset:auto 0 0 0;margin:auto;background:#111827;color:#fff;border:none;padding:12px 16px;border-top-left-radius:12px;cursor:pointer}
 
-    /* Testimonials */
+    /* Testimonios */
     .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .quote{background:#fff;border:1px solid var(--borde);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 
-    /* Guarantee + FAQ */
+    /* Garantía + FAQ */
     .guarantee{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
     details{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:14px}
     summary{font-weight:700;cursor:pointer}
@@ -122,46 +107,14 @@ How to publish on GitHub Pages (gratis):
       .guarantee{grid-template-columns:1fr}
       .gallery{grid-template-columns:repeat(3,1fr)}
     }
-  </style>  <!-- JSON-LD: Product + FAQ -->  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "LUMINASK",
-    "brand": {"@type":"Brand","name":"TREND IA"},
-    "description": "Máscara de fototerapia con 7 luces LED para uso en casa.",
-    "image": ["https://luminask.trend-ia.com/assets/img/gal-1.jpg"],
-    "offers": {
-      "@type": "Offer",
-      "url": "https://www.trend-ia.com/luminask#comprar",
-      "priceCurrency": "MXN",
-      "price": "0.00",
-      "availability": "https://schema.org/PreOrder"
-    },
-    "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"124"}
-  }
-  </script>  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"¿Cuánto tiempo debo usarla?","acceptedAnswer":{"@type":"Answer","text":"15 minutos por día son suficientes. Consulta el manual si tienes piel sensible."}},
-      {"@type":"Question","name":"¿Es para todo tipo de piel?","acceptedAnswer":{"@type":"Answer","text":"Sí, es apta para todo tipo de piel. Si tienes condición dermatológica, consulta a tu especialista."}},
-      {"@type":"Question","name":"¿Tiene garantía?","acceptedAnswer":{"@type":"Answer","text":"Sí, garantía de satisfacción de 30 días. Si no te convence, te devolvemos el dinero."}}
-    ]
-  }
-  </script></head>
+  </style>
+</head>
+
 <body>
 <header>
   <div class="wrap bar" aria-label="Barra superior">
     <a class="brand" href="#hero" aria-label="Inicio TREND IA">
-      <span class="word">TRENDIA</span>
-      <span class="tag" aria-hidden="true">
-        <!-- etiqueta de novedad con flecha ascendente -->
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 8a4 4 0 0 1 4-4h6.343a2 2 0 0 1 1.414.586l3.657 3.657A2 2 0 0 1 20 9.657V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z" fill="currentColor"/>
-          <path d="M9 13l3-3 3 3" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
+      <img src="assets/img/trendia-logo.jpg" alt="TRENDIA" class="brand-logo">
     </a>
     <nav aria-label="Principal">
       <a href="#beneficios">Beneficios</a>
@@ -171,7 +124,9 @@ How to publish on GitHub Pages (gratis):
       <a href="#comprar" class="btn primary" style="padding:8px 14px">Comprar</a>
     </nav>
   </div>
-</header><main id="hero" class="hero">
+</header>
+
+<main id="hero" class="hero">
   <div class="wrap inner">
     <div>
       <span class="kicker">Beauty-Tech • by TREND IA</span>
@@ -186,29 +141,21 @@ How to publish on GitHub Pages (gratis):
         <li>Pagos seguros (Stripe/PayPal)</li>
       </ul>
     </div>
-    <div class="card" aria-label="Imagen del producto">
-      <img src="assets/img/hero-mask.jpg" alt="LUMINASK máscara LED" loading="lazy">
-    </div>
   </div>
-</main><section id="beneficios">
+</main>
+
+<section id="beneficios">
   <div class="wrap">
     <h2 class="title">Beneficios por longitud de onda</h2>
     <div class="grid-3">
-      <article class="feature">
-        <h3>Roja (≈630–660nm)</h3>
-        <p class="muted">Percepción de firmeza y luminosidad. Rutina: 15 min, 3–5 veces por semana.</p>
-      </article>
-      <article class="feature">
-        <h3>Azul (≈460–480nm)</h3>
-        <p class="muted">Sensación de piel más limpia en zonas con imperfecciones.</p>
-      </article>
-      <article class="feature">
-        <h3>Verde (≈520–540nm)</h3>
-        <p class="muted">Aspecto de tono más uniforme y calmado.</p>
-      </article>
+      <article class="feature"><h3>Roja (≈630–660nm)</h3><p class="muted">Percepción de firmeza y luminosidad. Rutina: 15 min, 3–5 veces por semana.</p></article>
+      <article class="feature"><h3>Azul (≈460–480nm)</h3><p class="muted">Sensación de piel más limpia en zonas con imperfecciones.</p></article>
+      <article class="feature"><h3>Verde (≈520–540nm)</h3><p class="muted">Aspecto de tono más uniforme y calmado.</p></article>
     </div>
   </div>
-</section><section id="como" style="background:var(--lavanda)">
+</section>
+
+<section id="como" style="background:var(--lavanda)">
   <div class="wrap">
     <h2 class="title">Cómo funciona</h2>
     <div class="steps">
@@ -217,66 +164,20 @@ How to publish on GitHub Pages (gratis):
       <div class="step"><div class="num">3</div><h3>Rutina constante</h3><p class="muted">Resultados percibidos con constancia. Complementa con tu skincare habitual.</p></div>
     </div>
   </div>
-</section><section id="galeria">
-  <div class="wrap">
-    <h2 class="title">Galería</h2>
-    <div class="gallery" aria-label="Galería de producto">
-      <img src="assets/img/gal-1.jpg" alt="LUMINASK ángulo frontal" loading="lazy">
-      <img src="assets/img/gal-2.jpg" alt="Detalle LEDs" loading="lazy">
-      <img src="assets/img/gal-3.jpg" alt="Uso en casa" loading="lazy">
-      <img src="assets/img/gal-4.jpg" alt="Empaque" loading="lazy">
-      <img src="assets/img/gal-5.jpg" alt="Accesorios incluidos" loading="lazy">
-      <img src="assets/img/gal-6.jpg" alt="LUMINASK en tocador" loading="lazy">
-    </div>
-    <div class="video" style="margin-top:14px">
-      <img src="assets/img/video-cover.jpg" alt="Video UGC 15–30 s" loading="lazy">
-      <button id="playUGC" aria-label="Reproducir video">Reproducir video UGC</button>
-    </div>
-  </div>
-</section><section id="resultados" style="background:var(--lavanda)">
+</section>
+
+<section id="resultados" style="background:var(--lavanda)">
   <div class="wrap">
     <h2 class="title">Resultados reales</h2>
     <div class="testis">
-      <blockquote class="quote">
-        <p>“A las 3 semanas mi piel se ve más luminosa. La rutina es fácil.”</p>
-        <cite class="muted">— Mónica R.</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>“Me ayudó con brotes ocasionales usando el modo azul.”</p>
-        <cite class="muted">— Gaby T.</cite>
-      </blockquote>
-      <blockquote class="quote">
-        <p>“Se siente premium y ligera. 10/10 en unboxing.”</p>
-        <cite class="muted">— Andrea V.</cite>
-      </blockquote>
+      <blockquote class="quote"><p>“A las 3 semanas mi piel se ve más luminosa. La rutina es fácil.”</p><cite class="muted">— Mónica R.</cite></blockquote>
+      <blockquote class="quote"><p>“Me ayudó con brotes ocasionales usando el modo azul.”</p><cite class="muted">— Gaby T.</cite></blockquote>
+      <blockquote class="quote"><p>“Se siente premium y ligera. 10/10 en unboxing.”</p><cite class="muted">— Andrea V.</cite></blockquote>
     </div>
   </div>
-</section><section id="garantia">
-  <div class="wrap guarantee">
-    <div>
-      <h2 class="title">Garantía TREND IA de 30 días</h2>
-      <p class="muted">Pruébala sin riesgo. Si no te convence, regrésala en 30 días y te devolvemos el dinero.</p>
-      <div style="margin-top:14px" class="cta">
-        <a class="btn primary" href="#comprar">Comprar ahora</a>
-        <a class="btn secondary" id="btn-test-2" href="#" target="_blank" rel="noopener">Hacer test de piel</a>
-      </div>
-    </div>
-    <aside id="faq" aria-label="Preguntas frecuentes">
-      <details open>
-        <summary>¿Cuánto tiempo debo usarla?</summary>
-        <p class="muted">15 minutos por día. No excedas el tiempo recomendado.</p>
-      </details>
-      <details>
-        <summary>¿Es segura?</summary>
-        <p class="muted">Diseñada para uso en casa siguiendo el manual. Ante condiciones médicas, consulta a tu especialista.</p>
-      </details>
-      <details>
-        <summary>¿Envíos y devoluciones?</summary>
-        <p class="muted">Envíos a todo México. Devolución simple dentro de 30 días desde la compra.</p>
-      </details>
-    </aside>
-  </div>
-</section><section id="comprar" style="background:var(--lavanda)">
+</section>
+
+<section id="comprar" style="background:var(--lavanda)">
   <div class="wrap">
     <h2 class="title">Compra segura</h2>
     <p class="muted">Paga con tarjeta, Apple Pay/Google Pay o PayPal a través de Stripe/PayPal.</p>
@@ -285,46 +186,21 @@ How to publish on GitHub Pages (gratis):
       <a class="btn secondary" href="#hero">Volver arriba</a>
     </div>
   </div>
-</section><footer>
+</section>
+
+<footer>
   <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
     <div class="seal" aria-label="Sello by TREND IA">
       <span class="word">TRENDIA</span>
-      <span class="tag" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 8a4 4 0 0 1 4-4h6.343a2 2 0 0 1 1.414.586l3.657 3.657A2 2 0 0 1 20 9.657V16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z" fill="currentColor"/>
-          <path d="M9 13l3-3 3 3" stroke="#111827" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
       <span>by TREND IA</span>
     </div>
     <small>© <span id="y"></span> TREND IA — LUMINASK™. Todos los derechos reservados. • <a href="#" rel="nofollow">Aviso de privacidad</a></small>
   </div>
-</footer><script>
-  // year
+</footer>
+
+<script>
   document.getElementById('y').textContent = new Date().getFullYear();
-  
-  // Configura tus URLs aquí
-  const FORMS_URL = document.body.dataset.formsUrl || 'https://forms.gle/TU_FORM_DE_GOOGLE';
-  const PAY_URL   = document.body.dataset.payUrl   || 'https://buy.stripe.com/TU_LINK_DE_PAGO';
+</script>
 
-  // CTA bindings
-  const btnTest = document.getElementById('btn-test');
-  const btnTest2 = document.getElementById('btn-test-2');
-  const btnBuy = document.getElementById('btn-buy');
-  const btnBuy2 = document.getElementById('btn-buy-2');
-  
-  [btnTest, btnTest2].forEach(b=>{ if(b){ b.href = FORMS_URL; } });
-  [btnBuy, btnBuy2].forEach(b=>{ if(b){ b.href = PAY_URL; b.setAttribute('rel','noopener'); b.target = '_blank'; } });
-
-  // Video modal simple (abre el UGC en nueva pestaña o reemplaza con embed)
-  const play = document.getElementById('playUGC');
-  if(play){ play.addEventListener('click', ()=>{
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ','_blank','noopener'); // reemplaza por tu URL UGC
-  }); }
-
-  // Accesibilidad: focus visible para botones
-  document.querySelectorAll('.btn').forEach(el=>{
-    el.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ el.click(); } });
-  });
-</script><!-- (Opcional) Analytics: pega tu script de GA4 o Plausible aquí --></body>
+</body>
 </html>
